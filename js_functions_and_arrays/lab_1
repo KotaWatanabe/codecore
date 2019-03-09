@@ -1,0 +1,5 @@
+function reverse(word){
+    const  reversedWord = word.reverse();
+    return reversedWord;
+}
+console.log(reverse("hello"));

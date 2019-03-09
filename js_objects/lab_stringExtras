@@ -1,0 +1,22 @@
+const StringExtras 
+
+
+
+
+= {
+    count: 0,
+    inc() {
+      this.count += 1;
+      return this.count;
+    },
+    set(count) {
+      this.count = count;
+    },
+    dec() {
+      this.count -= 1;
+      return this.count;
+    },
+    now() {
+      return this.count;
+    }
+  };
