@@ -1,0 +1,77 @@
+/* My stylesheet */
+@import url("reset.css");
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Slabo+27px');
+
+body {
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    padding:3em;
+    font-family: 'Montserrat', sans-serif;
+    }
+  
+.first-section{
+    border:1px solid white;
+    padding:2em;
+}
+
+/* Basic Typegraphic Style */
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Slabo 27px', serif;
+    margin-bottom: 0.5em;
+}
+
+strong{font-weight: bold;}
+em{font-style:italic;}
+abbr {background:yellow;}
+
+h1 {font-size: 2.488em;}
+h2 {font-size: 2.074em;}
+h3 {font-size: 1.728em;}
+h4 {font-size: 1.44em;}
+h5 {font-size: 1.2em;}
+
+p,li {
+    font-size: 1.2em;
+    line-height: 1.2;
+    font-weight: normal;
+    margin-bottom: 0.5em;
+  }
+  /* Hyper Link Style */
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+/* Selected color style */
+  ::selection{
+      background:#fff200;
+  }
+
+  li{
+      list-style:square;
+      list-style-position: inside;
+  }
+
+  img {
+    max-width: 100%; 
+    /* If the max-width property is set to 100%, the image will scale down if it has to, but never scale up to be larger than its original size */
+    height: auto;
+    /* Automatic height preserves the aspect ratio */
+  }
+
+  button {
+      background:white;
+      border-radius: 1em;
+      border:none;
+      /* Longhand CSS */
+      padding-top: 1em;
+      padding-right: 2em;
+      padding-bottom: 1em;
+      padding-left: 2em;
+      /* TRouBLe */
+      padding:1em 2em 1em 2em;
+      /* TB LR */
+      padding:1em 2em;
+  }
