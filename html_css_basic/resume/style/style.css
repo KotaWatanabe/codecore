@@ -1,0 +1,106 @@
+/* My stylesheet */
+@import url("reset.css");
+@import url('https://fonts.googleapis.com/css?family=Holtwood+One+SC|Reem+Kufi');
+body {
+    background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+    padding:3em 10em;
+    }
+    
+strong{
+    font-weight: bold;}
+
+/* h1 h2 p li */
+h1,h2{
+    font-family: 'Holtwood One SC', serif;
+    color:#505050;
+    text-align: center;
+}
+
+h1{
+    font-size: 2.488em;
+    padding-bottom: 0.5em;
+}
+h2 {
+    font-size: 2em;
+    padding: 0.5em 0.5em;
+    text-decoration-line: underline;
+    }
+
+p,li {
+    font-size: 1.2em;
+    line-height: 1.2;
+    font-weight: normal;
+    font-family: 'Reem Kufi', sans-serif;
+    padding-top: 0.5em;
+    color:#606060;
+  }
+  ol{
+    padding: 0.5em 0;
+}
+  li{
+    list-style:circle;
+    list-style-position: inside;
+    margin-bottom: 0.5em;
+}
+
+/* font-awesome */
+i {
+    padding-left: 0.5em;
+}
+
+/*link */
+
+a {
+    color:#606060;
+    text-decoration: none;
+}
+a:hover{
+    font-weight:bold;
+    text-decoration-line: underline;
+}
+
+/* first-section */
+.first-section{
+    text-align: center;
+}
+.first-section p{
+    font-size:1em;
+    padding: 0.1em;
+}
+/* aboutme */
+.aboutme{
+    padding: 0.3em 10em;
+    text-align: center;
+}
+
+/* main-section */
+.main-section ol {
+    text-align: center;
+}
+.main-section p {
+    text-align: center;
+    padding: 0;
+}
+.main-section p em{
+    font-size: 0.8em;
+}
+/* job-title */
+.title{
+    text-decoration-line: underline;
+}
+
+/* button */
+.cta{
+    padding:0.5em 12em;
+}
+button{
+    background:#707070;
+    border-radius:0.5em;
+    font-size: 1em;
+    font-weight: bold;
+    color:#303030;
+    padding:1em 2em;
+    cursor: pointer;
+    width: 100%;
+    margin:auto;
+}
