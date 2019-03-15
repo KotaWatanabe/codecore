@@ -1,43 +1,57 @@
 /* My stylesheet */
 @import url("reset.css");
 @import url('https://fonts.googleapis.com/css?family=Holtwood+One+SC|Reem+Kufi');
+
+html{
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
-    background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
-    padding:3em 10em;
-    }
-    
-strong{
+    height: 100%; /* The body will now be 100% height because the parent element also is 100% high. */
+    width:100%;
+    margin: 0px auto;
+     /* When the left and right margin is set to auto AND a width is specified on the element, the element will be centered. Note, the text or image inside the element will remain left aligned (default) unless changed using text-align */
+     background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+    background-attachment: fixed;
+    /* Scroll: The background image will scroll with the page. */
+    /* Fixed: The background image will not scroll with the page. */
+    padding:1em 4em;
+  }
+  strong{
     font-weight: bold;}
 
 /* h1 h2 p li */
 h1,h2{
     font-family: 'Holtwood One SC', serif;
     color:#505050;
-    text-align: center;
 }
 
 h1{
-    font-size: 2.488em;
-    padding-bottom: 0.5em;
+    font-size: 5em;
+    text-align: center;
 }
 h2 {
-    font-size: 2em;
-    padding: 0.5em 0.5em;
+    font-size: 2.5em;
     text-decoration-line: underline;
     }
 
 p,li {
-    font-size: 1.2em;
+    font-size: 1.4em;
     line-height: 1.2;
     font-weight: normal;
     font-family: 'Reem Kufi', sans-serif;
     padding-top: 0.5em;
     color:#606060;
   }
-  ol{
-    padding: 0.5em 0;
-}
-  li{
+
+ .socialmedia-list, .education-list, .skills-list, .work-experience-list{
     list-style:circle;
     list-style-position: inside;
     margin-bottom: 0.5em;
@@ -45,7 +59,8 @@ p,li {
 
 /* font-awesome */
 i {
-    padding-left: 0.5em;
+    padding-right: 0.5em;
+    width:2em;
 }
 
 /*link */
@@ -59,39 +74,105 @@ a:hover{
     text-decoration-line: underline;
 }
 
-/* first-section */
-.first-section{
-    text-align: center;
-}
-.first-section p{
-    font-size:1em;
-    padding: 0.1em;
-}
-/* aboutme */
-.aboutme{
-    padding: 0.3em 10em;
-    text-align: center;
+.container {
+    display: flex;
+    /* Setting flex on the parent. Other displays include block level (one element above the other) and inline (used for text elements). */
+    width: 100%;
+    /* min-height: 100vh; */
 }
 
-/* main-section */
-.main-section ol {
-    text-align: center;
+/* containers */
+
+/* first */
+.name{
+    padding: 3em 1em;
+    flex: 1;
 }
-.main-section p {
-    text-align: center;
-    padding: 0;
+
+/* second */
+.second{
+    padding: 2em 3em;
+    border-top:1px solid rgb(151, 151, 245);
 }
-.main-section p em{
+.aboutme{
+    flex-direction:column;
+    /* text-align: center; */
+    flex: 2;
+}
+.aboutme i{
+    padding-left: 0.5em;
+}
+.about-me-h2{
+    padding-bottom: 0.3em;
+}
+.socialmedia{
+    flex-direction:column;
+    padding-left: 1em;
+    flex: 1;
+    font-size: 1em;
+    border-left:1px solid rgb(151, 151, 245);
+}
+
+.second ul{
+    list-style-type: none;
+}
+
+/* third */
+.third{
+    padding-top:2em;
+    border-top:1px solid rgb(151, 151, 245);
+}
+.third i{
+    padding-left: 0.5em;
+}
+
+.left-bar{
+    flex:1;
+    flex-direction:column;
+    padding-left: 3em;
+    padding-right: 1em;
+}
+.education{ 
+    padding-bottom: 2em;
+}
+.education span{
+    font-size: 0.9em;
+}
+.education-h2{
+    padding-bottom: 0.3em;
+}
+.skills{
+    border-top:1px solid rgb(151, 151, 245);
+}
+.skills h2{
+    padding: 0.5em 0;
+}
+.skills-list {
+    list-style-type: none;
+}
+.work-experience{
+    flex:2;
+    flex-direction:column;
+    border-left:1px solid rgb(151, 151, 245);
+    padding-left: 2em;
+}
+.work-experience-h2{
+    padding-bottom: 0.3em;
+}
+
+.work-experience span{
     font-size: 0.8em;
+    padding-left: 1em;
 }
-/* job-title */
-.title{
-    text-decoration-line: underline;
+.work-experience p{
+    font-size:1.6em;
 }
+
+
 
 /* button */
-.cta{
-    padding:0.5em 12em;
+/* .cta{
+    padding:0.5em 2em;
 }
 button{
     background:#707070;
@@ -103,4 +184,4 @@ button{
     cursor: pointer;
     width: 100%;
     margin:auto;
-}
+} */

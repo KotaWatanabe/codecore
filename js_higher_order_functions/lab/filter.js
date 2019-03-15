@@ -23,7 +23,7 @@ function filter(arr, fn) {
   
   const even = function(n) {
       return n % 2 === 0;
-  };
+  }
   // even returns true if its argument, n, is an odd number (false otherwise)
   const odd = function(n) {
       return !even(n);

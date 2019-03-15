@@ -1,0 +1,71 @@
+@import url("reset.css");
+
+html{
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+/* Wild card applies to every element unless otherwise defined after this */
+
+body {
+    height: 100%; /* The body will now be 100% height because the parent element also is 100% high. */
+    color: #555;
+    font-family: Oswald, Arial, sans-serif;
+    width:100%;
+    margin: 0px auto;
+     /* When the left and right margin is set to auto AND a width is specified on the element, the element will be centered. Note, the text or image inside the element will remain left aligned (default) unless changed using text-align */
+    background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    /* See: https://webgradients.com/ */
+    background-attachment: fixed;
+    /* Scroll: The background image will scroll with the page. */
+    /* Fixed: The background image will not scroll with the page. */
+  }
+
+  .container {
+    display: flex;
+    /* Setting flex on the parent. Other displays include block level (one element above the other) and inline (used for text elements). */
+    width: 100%;
+    min-height: 100vh;
+    /* Viewport Height is a new unit of measurement */
+    border-bottom: 1px solid white;
+    background: lightblue
+  }
+  .item {
+        flex-direction:column;
+            /* Flex direction only works if the parent element (container in this example) has display: flex). */
+        background: deepskyblue;
+        padding: 2em 2.25em;
+        flex: 1;
+  }
+  .logo {flex: 2;}
+
+
+.aligning {
+    align-items: center;
+    justify-content: center;
+}
+
+/* CSS Specificity - target h1, h2, h3 and p elements that are a child of an element with a class of zero */
+.zero h1, .zero h2, .zero h3, .zero p {
+    line-height: 1; 
+    margin: 0;
+}
+
+.grow {
+    flex:2;
+}
+
+.fab {
+    color:white;
+}
+
+.social-icons-list{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+}
