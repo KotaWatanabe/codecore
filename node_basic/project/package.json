@@ -1,0 +1,24 @@
+{
+	"name": "project-demo",
+	"version": "0.0.0",
+	"description": "A demo of NPM projects and packages",
+	"main": "main.js",
+	"scripts": {
+		"start": "MY_ENV=hello nodemon main.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"demo",
+		"npm",
+		"node"
+	],
+	"author": "Maxwell Gordon",
+	"license": "ISC",
+	"dependencies": {
+		"jimp": "^0.6.0",
+		"qrcode": "^1.3.3"
+	},
+	"devDependencies": {
+		"nodemon": "^1.18.10"
+	}
+}
