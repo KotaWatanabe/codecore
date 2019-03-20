@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css?family=Staatliches|Thasadith');
+@import url("reset.css");
+
+
+/* Mobile First Styles */
+
+/* A mobile-first approach to styling means that styles are applied first to mobile devices. Code for larger screens is usually more complicated than the codes for smaller screens. This is why coding mobile first helps simplify your code. Advanced styles and other overrides for larger screens are then added into the stylesheet via media queries. This approach uses min-width media queries.  */
+
+/* The following styles apply from 0px to 600px */
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  /* Let's get to all the typographic and image styles */
+  
+
+body {
+    font-family: 'Thasadith', sans-serif;
+    font-size: 100%;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    font-family: 'Staatliches', cursive;
+  }
+  
+  p,
+  li {
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  .logo {
+    max-width: 5em;
+    height: auto;
+  }
+
+/* Main Page Structure for Mobile */
+
+/* 100% width on mobile */
+
+header,
+article,
+footer {
+  width: 100%;
+  background: pink;
+}
+
+header,
+footer {
+  padding: 2em;
+  background: #f5f5f5;
+  display: flex;
+}
+
+.branding,
+.nav{
+    width: 50%;
+}
+
+.branding{
+    background:white;
+}
+
+.nav{
+    background:#eee;
+}
+
+.menu {
+    text-align: right;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    /* Column menu on mobile */
+    background: lightblue;
+  }
+
+  /* Article, Card & Button Styles */
+
+article {
+    background: yellowgreen;
+    display: flex;
+    /* If we use display: block then we can't change the flex item order later on */
+    flex-direction: column;
+    width: 100%;
+  }
+
+  article p{
+      margin-bottom: 1em;
+  }
+
+  .card{
+      font-size: 1.5em;
+      padding: 2em;
+      background: white;
+      /* Fallback for older browsers */
+      background: rgba(255, 255, 255, 0.875);
+      /* Red Green Blue Alpha */
+      line-height: 1.2em;
+      margin-bottom: 1em;
+      width: 100%;
+      display: flex;
+      flex-direction:column;
+      transition:all 0.3s ease-out;
+  }
+
+  .card:hover{
+      box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+      transform:translateY(-2px) scale(1.005) translateZ(0);
+  }
+  
+  /* Button Styles */
+
+button {
+    border: 2px solid #eee;
+    background: white;
+    padding: 0.75em 1.5em;
+    width: 10em;
+    font-family: 'Thasadith', sans-serif;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  button:hover {
+    border: 2px solid black;
+    background: black;
+    color: white;
+  }
+
+  .b-text{
+      order:1;
+      background:lightblue;
+  }
+
+  .b-image{
+      background:orangered;
+  }
+
+  /*This applies from 600px onwards*/
+
+@media (min-width: 600px) {
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      article {
+        flex: 1;
+        /* take up the remaining space */
+        display: flex;
+        flex-direction: row;
+        background: #edf2f6;
+      }
+    
+      .card {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease-out;
+        background: yellowgreen;
+        margin: 1em;
+      }
+
+      .b-text{
+        order:0;
+        background: lightblue;
+      }
+
+      .pullquote {
+        flex: 1;
+      }
+    
+      header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 20vh;
+    
+      }
+    
+      .branding {
+        background: #fff;
+        width: 40%;
+        padding: 1em;
+    
+      }
+    
+      .nav {
+        width: 60%;
+      }
+    
+      .menu {
+        justify-content: space-around;
+        flex-direction: row;
+        background: white;
+    
+      }
+    
+      footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        /* Vertical */
+        justify-content: center;
+        /* Horizontal */
+        height: 20vh;
+      }
+    
+ }
