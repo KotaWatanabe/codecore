@@ -1,44 +1,27 @@
-// Update with your config settings.
+// To get this project started, we did:
+
+// 1. Generate the package.json.
+//    `npm init -y`
+// 2. Install the packages "pg" & "knex"
+//    `npm i pg knex`
+// 3. Generate this file (i.e. knexfile.js)
+//    `knex init`
 
 module.exports = {
 
   development: {
-    client: 'sqlite3',
+    client: "pg",
+    // The "client" setting above corresponds the library used to
+    // connect to our database.
     connection: {
-      filename: './dev.sqlite3'
-    }
-  },
-
-  staging: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      database:"knex_demo"
     },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: 'knex_migrations'
-    }
-  },
-
-  production: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: 'knex_migrations'
+    migrations:{
+      // Migrations are JS files that have queries to
+      // build the structure of your database (e.g. creating tables,
+      // altering tables and deleting tables.)
+      tableName: "migrations",
+      directory: "./db/migrations"
     }
   }
-
 };
