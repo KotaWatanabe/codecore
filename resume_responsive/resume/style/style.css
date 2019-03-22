@@ -1,0 +1,238 @@
+/* My stylesheet */
+@import url("reset.css");
+@import url('https://fonts.googleapis.com/css?family=Holtwood+One+SC|Reem+Kufi');
+
+html{
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+body {
+    height: 100%; /* The body will now be 100% height because the parent element also is 100% high. */
+    width:100%;
+    margin: 0px auto;
+     /* When the left and right margin is set to auto AND a width is specified on the element, the element will be centered. Note, the text or image inside the element will remain left aligned (default) unless changed using text-align */
+    background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+    background-attachment: fixed;
+    /* Scroll: The background image will scroll with the page. */
+    /* Fixed: The background image will not scroll with the page. */
+    padding:1em 1em;
+
+  }
+  strong{
+    font-weight: bold;
+    }
+    h1,h2{
+        font-family: 'Holtwood One SC', serif;
+        color:#505050;
+    }
+
+h1{
+    font-size: 2.25em;
+    text-align: center;
+}
+h2 {
+    font-size: 1.5em;
+    }
+footer{
+    text-align: center;
+    height: 3em;
+}
+p,li,footer {
+    font-size: 1em;
+    line-height: 1.2;
+    font-weight: normal;
+    font-family: 'Reem Kufi', sans-serif;
+    padding-top: 0.5em;
+    color:#606060;
+  }
+i{
+    color:rgb(151, 151, 245);
+}
+span{
+    font-size:0.8em;
+    padding-left: 0.5em;
+    color:#606060;
+    opacity:0.8;
+}
+.socialmedia-list, .education-list, .skills-list{
+  list-style-position: outside;
+  list-style-type: none;
+}
+
+.work-experience-list{
+    list-style-type: none;
+    list-style-position: outside;
+    margin-bottom: 0.5em;
+}
+
+/* font-awesome */
+h2 i, .skills-list i {
+    padding-left: 0.5em;  
+}
+.socialmedia-list i{
+    padding-right: 1em;
+    width:2em;
+}
+/*link */
+
+a {
+    color:#606060;
+    text-decoration: none;
+}
+a:hover{
+    font-weight:bold;
+    text-decoration-line: underline;
+}
+
+/* container */
+.first{
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid rgb(151, 151, 245);
+}
+.second{
+    border-bottom: 1px solid rgb(151, 151, 245);
+}
+.aboutme{
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid rgb(151, 151, 245);
+}
+.socialmedia{
+    padding-bottom: 0.5em;
+}
+.education{
+    padding-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid rgb(151, 151, 245);
+}
+.skills{
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid rgb(151, 151, 245);
+}
+.work-experience em{
+    font-size:1.2em;
+    font-weight: bold;
+}
+.title{
+    color:#606060;
+    opacity:0.8;
+}
+/* .work-experience span{
+    font-size:0.8em;
+    padding-left: 0.5em;
+    color:#606060;
+    opacity:0.8;
+} */
+
+/* --------------------------------------------------------------- */
+/* desktop */
+@media (min-width: 600px) {
+body {
+    padding:1em 4em;
+  
+    }
+    h1{
+        font-size: 5em;
+    }
+    h2{
+        font-size: 2.5em;
+        padding-bottom: 0.5em;
+    }
+    p,li {
+        font-size: 1.4em;
+        line-height: 2em;
+      }
+    
+    .container {
+        display: flex;
+        width: 100%;
+    }
+    
+    /* containers */
+    
+    .first{
+        flex:1;
+        width:100%;
+        padding: 1.5em;
+    }
+    .name{
+        flex:1;
+        text-align: center;
+    }
+
+    .second{
+        display:flex;
+        padding: 1em 0;
+    } 
+    
+    .aboutme{
+        flex-direction: column;
+        flex:2;
+        border-right:1px solid rgb(151, 151, 245);
+        padding-left: 3em;
+        border-bottom:none;
+    }
+    .aboutme p{
+        line-height:2em;
+    }
+    .socialmedia{
+        display:flex;
+        flex-direction: column;
+        flex: 1;
+        font-size: 0.9em;
+        padding-left: 1em;
+    }
+    .socialmedia-list li{
+        line-height:2em;
+    }
+    .third{
+        padding-top: 1em;
+    }
+    
+    .left-bar{
+        flex:1;
+        flex-direction:column;
+        padding-left: 2.5em;
+        padding-right: 1em;
+    }
+    .education{ 
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+    .education span{
+        font-size: 0.9em;
+    }
+    .skills{
+        padding-top: 1em;
+        border-bottom:none;
+    }
+    .work-experience{
+        padding-top: 1em;
+        flex:2;
+        flex-direction:column;
+        border-left:1px solid rgb(151, 151, 245);
+        padding-left: 2em;
+    }
+   
+   
+    .work-experience span{
+        font-size: 0.8em;
+        padding-left: 1em;
+    }
+    .work-experience p{
+        font-size:1.6em;
+    }
+
+}   
+
