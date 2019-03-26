@@ -5,6 +5,8 @@ const logger = require("morgan");
 // of the express application.
 const app = express(); // http.createServer(...)
 
+app.set("view engine", "ejs");
+
 // -= MIDDLEWARE =-
 
 // LOGGER
@@ -58,6 +60,19 @@ app.get("/hello_world", (request, response) => {
   // and adds it to the response's body, then terminates
   // the response sending it to the client.
   response.send("Hello, World!");
+});
+
+app.get("/", (request, response) => {
+  // `response.render(<ejs-file-path>)`
+  // Render an template located in "views/" + <ejs-file-path>.
+  // When writing the file path, you can omit the extension.
+
+  // In the call below, the file at "./views/welcome.ejs" is
+  // rendered as HTML and is sent as the body of the HTTP response
+  // by our Express server. Just like `response.send(<data>)`,
+  // `response.render(<file-path>)` terminates response by sending to
+  // to the client.
+  response.render("welcome");
 });
 
 const PORT = 4545;
