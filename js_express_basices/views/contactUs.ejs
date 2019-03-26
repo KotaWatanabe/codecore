@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Express Adventure</title>
+</head>
+<body>
+  <h1>Contact Us</h1>
+  <!--
+    When a form submitted, a HTTP request is made by the browser
+    to the URL in the "action" attribute with the data from
+    input fields of the form. If an "action" attribute is not given,
+    the default URL is the current URL. The default HTTP VERB is GET
+    and can be changed to POST using the "method" attribute.
+  -->
+  <form action="/thank_you">
+    <div>
+      <label for="fullName">What is your name?</label> <br>
+      <input type="text" id="fullName" name="fullName">
+    </div>
+
+    <div>
+      <label for="favouriteColour">What is your favourite colour?</label> <br>
+      <input type="color" id="favouriteColour" name="favouriteColour">
+    </div>
+
+    <div>
+      <label for="message">What's on your mind?</label> <br>
+      <textarea id="message" name="message" cols="60" rows="5"></textarea>
+    </div>
+
+    <input type="submit" value="Send">
+  </form>
+</body>
+</html>

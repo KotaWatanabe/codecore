@@ -75,6 +75,44 @@ app.get("/", (request, response) => {
   response.render("welcome");
 });
 
+app.get("/contact_us", (request, response) => {
+  console.log("URL Query:", request.query);
+  response.render("contactUs");
+});
+
+// http://localhost:4545/contact_us?fullName=Steve&message=code+%26+stuff
+// scheme | host | port | path     | query (search)
+
+// The "query" in the URL is a way to encode data as key-value
+// pairs in the URL itself. It used by forms to store data from
+// its inputs for example. This called URL encoding.
+
+// The encoding format is as follows:
+// ?key_1=value_1&key_2=value_2&key_3=value_3
+// Express takes a query from a URL and converts into
+// an object as follows:
+// { key_1: "value_1", key_2: "value_2", key_3: "value_3"}
+
+app.get("/thank_you", (request, response) => {
+  // `request.query` is a property that holds an object
+  // representation of the URL query.
+
+  const fullName = request.query.fullName;
+  const favouriteColour = request.query.favouriteColour;
+  const message = request.query.message;
+
+  // `response.send(...)` is helpful when debugging if you
+  // see the contents of object in your browser. Use it
+  // like you would use `console.log(...)`
+  // response.send(request.query);
+
+  response.render("thankYou", {
+    fullName: fullName,
+    favouriteColour: favouriteColour,
+    message: message
+  });
+});
+
 const PORT = 4545;
 const ADDRESS = "localhost"; // 127.0.0.1
 app.listen(PORT, ADDRESS, () => {
