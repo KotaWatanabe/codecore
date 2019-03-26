@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Express Adventure</title>
-</head>
-<body>
+<%- include("./partials/header")%>
   <% if (fullName && favouriteColour) { %>
     <div style="color: <%= favouriteColour %>;">
       <h3>Hi, <%= fullName %></h3>
@@ -21,5 +13,4 @@
   <% } else { %>
     <h3>Thanks for being...</h3>
   <% } %>
-</body>
-</html>
+  <%- include("./partials/footer")%>
