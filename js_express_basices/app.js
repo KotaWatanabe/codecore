@@ -1,8 +1,18 @@
 const express = require("express");
+const logger = require("morgan");
 // Requiring the "express" package
 // returns a function that creates an instance
 // of the express application.
 const app = express(); // http.createServer(...)
+
+// -= MIDDLEWARE =-
+
+// LOGGER
+// When using the "morgan" middleware, call it with
+// a string that describes the formatting of the logs.
+// Find out more here:
+// https://github.com/expressjs/morgan
+app.use(logger("dev"));
 
 // URL (Uniform Resource Locator)
 // URL http://localhost:4545/hello_world
@@ -46,7 +56,7 @@ app.get("/hello_world", (request, response) => {
 
   // The method "send" of "response" takes a string
   // and adds it to the response's body, then terminates
-  // the response sending it to the browser.
+  // the response sending it to the client.
   response.send("Hello, World!");
 });
 
