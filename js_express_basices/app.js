@@ -198,6 +198,12 @@ app.post("/sign_in", (request, response) => {
   response.redirect("/");
 });
 
+app.post("/sign_out",(request,response)=>{
+  response.clearCookie("username");
+
+  response.redirect("/");
+})
+
 const PORT = 4545;
 const ADDRESS = "localhost"; // 127.0.0.1
 app.listen(PORT, ADDRESS, () => {

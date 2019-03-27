@@ -17,6 +17,9 @@
                 <span>
                  Hello,<%= username %>
                  </span>
+                 <form class="sign-out-form" action="/sign_out" method="POST">
+                <input type="submit" value="Sign Out">
+                </form>
                 <%}else{%>
                 <form class ="sign-in-form"action="/sign_in" method="POST">
                 <input type="text" name="username" placeholder="Username">
