@@ -1,16 +1,19 @@
-<%- include("./partials/header")%>
-  <% if (fullName && favouriteColour) { %>
-    <div style="color: <%= favouriteColour %>;">
-      <h3>Hi, <%= fullName %></h3>
+<%- include("./partials/header") %>
 
-      <p>
-        You said: <q><%= message %> </q> <br>
-        Your favourite color is: <%= favouriteColour %>
-      </p>
+<% if (fullName && favouriteColour && favouriteDay) { %>
+  <div style="color: <%= favouriteColour %>;">
+    <h3>Hi, <%= fullName %></h3>
 
-      <p>Thanks for reaching out!</p>
-    </div>
-  <% } else { %>
-    <h3>Thanks for being...</h3>
-  <% } %>
-  <%- include("./partials/footer")%>
+    <p>
+      You said: <q><%= message %> </q> <br>
+      Your favourite color is: <%= favouriteColour %><br>
+      Your favourite day is: <%= favouriteDay %>
+    </p>
+
+    <p>Thanks for reaching out!</p>
+  </div>
+<% } else { %>
+  <h3>Thanks for being...</h3>
+<% } %>
+
+<%- include("./partials/footer") %>

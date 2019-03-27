@@ -1,28 +1,54 @@
-<%- include("./partials/header")%>
-  <h1>Contact Us</h1>
-  <!--
-    When a form submitted, a HTTP request is made by the browser
-    to the URL in the "action" attribute with the data from
-    input fields of the form. If an "action" attribute is not given,
-    the default URL is the current URL. The default HTTP VERB is GET
-    and can be changed to POST using the "method" attribute.
-  -->
-  <form action="/thank_you">
-    <div>
-      <label for="fullName">What is your name?</label> <br>
-      <input type="text" id="fullName" name="fullName">
-    </div>
+<%- include("./partials/header") %>
 
-    <div>
-      <label for="favouriteColour">What is your favourite colour?</label> <br>
-      <input type="color" id="favouriteColour" name="favouriteColour">
-    </div>
+<h1>Contact Us</h1>
+<!--
+  When a form submitted, a HTTP request is made by the browser
+  to the URL in the "action" attribute with the data from
+  input fields of the form. If an "action" attribute is not given,
+  the default URL is the current URL. The default HTTP VERB is GET
+  and can be changed to POST using the "method" attribute.
+-->
+<form action="/thank_you">
+  <div>
+    <label for="fullName">What is your name?</label> <br>
+    <input type="text" id="fullName" name="fullName">
+  </div>
 
-    <div>
-      <label for="message">What's on your mind?</label> <br>
-      <textarea id="message" name="message" cols="60" rows="5"></textarea>
-    </div>
+  <div>
+    <label for="favouriteColour">What is your favourite colour?</label> <br>
+    <input type="color" id="favouriteColour" name="favouriteColour">
+  </div>
 
-    <input type="submit" value="Send">
-  </form>
-  <%- include("./partials/footer")%>
+  <div>
+    <label for="message">What's on your mind?</label> <br>
+    <textarea id="message" name="message" cols="60" rows="5"></textarea>
+    </div>
+    
+  <div>
+    <label>What's your favourite day of the week?</label> <br>
+
+    <% const days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ] %>
+
+    <% for (let option of days) { %>
+      <input
+        type="radio" name="favouriteDay"
+        id="<%= option %>" value="<%= option %>"
+      >
+      <label for="<%= option %>"><%= option %></label>
+      <br>
+    <% } %>
+  </div>
+
+  <input type="submit" value="Send">
+</form>
+
+<%- include("./partials/footer") %>
+

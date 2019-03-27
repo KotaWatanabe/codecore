@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const logger = require("morgan");
 // Requiring the "express" package
 // returns a function that creates an instance
@@ -16,10 +17,17 @@ app.set("view engine", "ejs");
 // https://github.com/expressjs/morgan
 app.use(logger("dev"));
 
+// STATIC ASSETS
+// `__dirname` is a global variable available in Node that returns
+// the full directory path beginning from root (i.e. /) to
+// the location of the file where it used.
+console.log("__dirname:", __dirname);
+
+app.use(express.static(path.join(__dirname, "public")))
+
 // URL (Uniform Resource Locator)
 // URL http://localhost:4545/hello_world
-//   scheme | address  | port | path
-//          |     host        |
+//   scheme | host  | port | path
 
 // The "scheme" identifies the protocol being
 // used to communicate. Could be HTTP, HTTPS,
@@ -109,6 +117,7 @@ app.get("/thank_you", (request, response) => {
   response.render("thankYou", {
     fullName: fullName,
     favouriteColour: favouriteColour,
+    favouriteDay: request.query.favouriteDay,
     message: message
   });
 });
