@@ -62,6 +62,35 @@ app.use(express.static(path.join(__dirname, "public")));
 // The "path" identifies a specific web page (a resource)
 // on a server.
 
+// CUSTOM MIDDLEWARE
+app.use((request, response, next) => {
+  // Read cookies from the request with
+  // `request.cookies`. It's a plain object
+  // where each key corresponds to the name of a cookie.
+  // This is only available when "cookie-parser" is installed
+  // and setup.
+  console.log("ðª Cookies:", request.cookies);
+
+  // Set properties on `response.locals` to create variables
+  // that are global to all of our rendered templates
+  // including any partial.
+  // The following line means that a variable named "username"
+  // with a value of "" will useable in our templates.
+  response.locals.username = "";
+
+  const username = request.cookies.username;
+
+  if (username) {
+    response.locals.username = username;
+  }
+
+  // The third argument this callback (or middleware function)
+  // is a function typically named "next". When called,
+  // it tells Express that his middleware has completed work and
+  // to move on to the next middleware.
+  next();
+});
+
 // -= ROUTES =-
 
 // A route is a function that creates a response
