@@ -4,6 +4,13 @@ html {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
   
+  body{
+    margin: 0;
+  }
+
+  main{
+    padding: 10px;
+  }
   /* The * is a selector that gets ALL TAGS */
   * {
     font-family: inherit;
@@ -23,3 +30,15 @@ html {
     border-radius: var(--border-radius);
   }
   
+  .navbar{
+    display:flex;
+    align-items:center;
+  }
+
+  .navbar > * {
+    padding: 10px;
+  }
+
+  .sign-in-form{
+    margin-left:auto;
+  }

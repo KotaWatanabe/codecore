@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const logger = require("morgan");
+const cookieParser = require("cookie-parser");
 // Requiring the "express" package
 // returns a function that creates an instance
 // of the express application.
@@ -17,13 +18,35 @@ app.set("view engine", "ejs");
 // https://github.com/expressjs/morgan
 app.use(logger("dev"));
 
+// URLENCODED
+
+// This middleware will decode data coming from forms
+// that been POSTed (using the POST HTTP verb.)
+
+// When the "extended" option is set to `true`, it allows
+// forms post data in the shape of an array and/or object. If
+// set to false, it can only accept data in the shape a string.
+app.use(express.urlencoded({ extended: true }));
+
+// It will make the form data available as a property of request.
+// It will be `request.body` instead of `request.query`.
+
+// COOKIER PARSER
+app.use(cookieParser());
+
 // STATIC ASSETS
 // `__dirname` is a global variable available in Node that returns
 // the full directory path beginning from root (i.e. /) to
 // the location of the file where it used.
 console.log("__dirname:", __dirname);
 
-app.use(express.static(path.join(__dirname, "public")))
+// The static assets middleware will make all files and directories
+// inside the specified path accessible by a URL beginning from
+// the host.
+// Examples:
+// ./public/pic.png -> http://localhost:4545/pic.png
+// ./public/styles/main.css -> http://localhost:4545/styles/main.css
+app.use(express.static(path.join(__dirname, "public")));
 
 // URL (Uniform Resource Locator)
 // URL http://localhost:4545/hello_world
@@ -120,6 +143,30 @@ app.get("/thank_you", (request, response) => {
     favouriteDay: request.query.favouriteDay,
     message: message
   });
+});
+
+const COOKIE_MAX_AGE = 1000 * 60 * 60 * 24 * 7;
+app.post("/sign_in", (request, response) => {
+  // `request.body` is only available if the "urlencoded"
+  // middleware is setup. It will contain data from
+  // a form submitted via POST.
+  const username = request.body.username;
+
+  // `response.cookie(<cookie-name>, <cookie-value>, <options>)`
+  // The above method is added to the response by the "cookie-parser"
+  // middleware. Use it to send cookies to the browser.
+  // The arguments are in order:
+  // - A string that is the name of the cookie
+  // - A value for the cookie
+  // - (optional) options for the cookie
+  response.cookie("username", username, { maxAge: COOKIE_MAX_AGE });
+
+  // Like `response.send` and `response.render`, `response.redirect`
+  // terminates the response. It sets a redirect statux code (e.g. 3XX, 301, 302, etc.)
+  // and it also sets location (i.e. URL.) When the browser receives a
+  // redirect response, it makes a follow-up request to the provided
+  // location. In this case, the browser is sent to our welcome page (i.e. "/")
+  response.redirect("/");
 });
 
 const PORT = 4545;
