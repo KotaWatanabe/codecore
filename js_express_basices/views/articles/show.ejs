@@ -1,0 +1,12 @@
+<%- include("../partials/header")%>
+
+<h1><%= article.title %></h1>
+
+<p><%= article.content %></p>
+
+<p>
+<small>Seen <%= article.viewCount %> time(s)</small>
+<small>Created at <%= article.cretaedAt %></small>
+</p>
+
+<%- include("../partials/footer")%>
