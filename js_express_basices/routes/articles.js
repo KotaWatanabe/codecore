@@ -4,6 +4,16 @@ const knex = require("../db/client");
 
 // -= Article Routes =-
 
+// NAME: article#index, METHOD: GET, PATH: /articles
+router.get("/", (req, res) => {
+    knex("articles")
+      .orderBy("createdAt", "DESC")
+      .then(articles => {
+        //   res.send(articles);
+        res.render("articles/index", { articles: articles });
+      });
+  });
+
 // NAME: article#new, METHOD: GET, PATH: /articles/new
 router.get("/new", (req, res) => {
   res.render("articles/new");
