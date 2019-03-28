@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");
+const methodOverride = require("method-override");
 const rootRouter = require("./routes/root")
 const articlesRouter = require("./routes/articles");
 // Requiring the "express" package
@@ -32,6 +33,23 @@ app.use(express.urlencoded({ extended: true }));
 
 // It will make the form data available as a property of request.
 // It will be `request.body` instead of `request.query`.
+
+// METHOD OVERRIDE
+// We need to use this middleware because forms
+// only support the POST & GET HTTP verbs. With this,
+// we'll be able to do DELET, PATCH, PUT, etc. with our
+// forms as a hack.
+app.use(
+  methodOverride((req, res) => {
+    if (req.body && req.body._method) {
+      const method = req.body._method;
+      return method;
+    }
+    // Whatever is returned from this callback,
+    // will be the new HTTP verb for the request as
+    // as it's part of the standard.
+  })
+);
 
 // COOKIER PARSER
 app.use(cookieParser());

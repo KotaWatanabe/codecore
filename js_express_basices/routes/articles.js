@@ -67,5 +67,18 @@ router.get("/:id", (req, res) => {
     });  
   });
 
+  // NAME: article#destroy, METHOD: DELETE, PATH: /articles/:id
+router.delete("/:id", (req, res) => {
+    const id = req.params.id;
+
+    knex("articles")
+    .where("id", id)
+    .del()
+    .then(() => {
+      res.redirect("/articles");
+    });
+  });
+  
+
 module.exports = router;
 

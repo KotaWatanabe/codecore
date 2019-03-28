@@ -4,6 +4,11 @@
 
 <p><%= article.content %></p>
 
+<form action="/articles/<%= article.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete">
+</form>
+
 <p>
 <small>Seen <%= article.viewCount %> time(s)</small>
 <small>Created at <%= article.cretaedAt %></small>
