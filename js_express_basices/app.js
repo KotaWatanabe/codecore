@@ -3,6 +3,7 @@ const path = require("path");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const rootRouter = require("./routes/root")
+const articlesRouter = require("./routes/articles");
 // Requiring the "express" package
 // returns a function that creates an instance
 // of the express application.
@@ -95,6 +96,8 @@ app.use((request, response, next) => {
 // -= ROUTERS =-
 
 app.use("/", rootRouter);
+app.use("/articles", articlesRouter);
+
 
 const PORT = 4545;
 const ADDRESS = "localhost"; // 127.0.0.1
