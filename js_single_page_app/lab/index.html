@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=å, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Amazon</title>
+    <script src="scripts/main.js"></script>
+    <link rel="stylesheet" href="stylesheets/main.css" />
+</head>
+<body>
+        <header>
+                <nav>
+                  <a data-target="welcome" href="">Welcome</a> |
+                  <a data-target="product-new" href="">New Product</a> |
+                  <a data-target="products-index" href="">Questions</a>
+                </nav>
+              </header>
+    <main class="page current" id="welcome">
+        <h1>
+          Amazon
+        </h1>
+      </main>
+  
+      <main class="page" id="product-show"></main>
+  
+      <main class="page" id="products-index">
+        <h1>Products</h1>
+        <ul class="product-list"></ul>
+      </main>
+
+      <main class="page" id="product-new">
+            <h1>New Product</h1>
+            <form id="new-product-form">
+              <div>
+                <label for="title">Title</label> <br />
+                <input type="text" name="title" id="title" />
+              </div>
+      
+              <div>
+                <label for="description">Description</label> <br />
+                <textarea name="description" id="description" cols="60" rows="5"></textarea>
+              </div>
+      
+              <input type="submit" value="Create Product" />
+            </form>
+          </main>
+</body>
+</html>

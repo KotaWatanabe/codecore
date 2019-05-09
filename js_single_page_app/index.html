@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Awesome Answers</title>
+    <script src="scripts/main.js"></script>
+    <link rel="stylesheet" href="stylesheets/main.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a data-target="welcome" href="">Welcome</a> |
+        <a data-target="question-new" href="">New Question</a> |
+        <a data-target="question-index" href="">Questions</a>
+      </nav>
+    </header>
+
+    <main class="page current" id="welcome">
+      <h1>
+        Awesome Answers
+      </h1>
+    </main>
+
+    <main class="page" id="question-show"></main>
+
+    <main class="page" id="question-index">
+      <h1>Questions</h1>
+      <ul class="question-list"></ul>
+    </main>
+
+    <main class="page" id="question-new">
+      <h1>New Question</h1>
+      <form id="new-question-form">
+        <div>
+          <label for="title">Title</label> <br />
+          <input type="text" name="title" id="title" />
+        </div>
+
+        <div>
+          <label for="body">Body</label> <br />
+          <textarea name="body" id="body" cols="60" rows="5"></textarea>
+        </div>
+
+        <input type="submit" value="Create Question" />
+      </form>
+    </main>
+  </body>
+</html>
