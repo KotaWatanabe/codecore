@@ -70,6 +70,12 @@ const Message = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  const filterButton = document.querySelector("#filter-messages-btn");
+  filterButton.addEventListener('click',()=>{
+    filterButton.getAttribute('data-filterStatus');
+  })
+
   const messagesUl = document.querySelector("#messages");
   const messageForm = document.querySelector("#new-message");
 
@@ -79,6 +85,10 @@ document.addEventListener("DOMContentLoaded", () => {
         .map(
           message => `
           <li>
+            <span>${message.username}</span><br>
+            <button 
+              data-id="${message.id}" 
+              class="message-flag">Flag</button>
             <strong>#${message.id}</strong>  ${message.body} <br>
             <button
               data-id="${message.id}"
@@ -98,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const { currentTarget } = event;
     const formData = new FormData(currentTarget);
 
-    Message.create({ body: formData.get("body") }).then(() => {
+    Message.create({ body: formData.get("body"), username: formData.get("username") }).then(() => {
       console.log("Message created!");
 
       refreshMessages();
@@ -108,11 +118,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   messagesUl.addEventListener("click", event => {
     const { target } = event;
+   
 
     if (target.matches(".message-delete")) {
-      const messageId = target.getAttribute("data-id");
+       const messageId = target.getAttribute("data-id");
+        Message.delete(messageId).then(() => refreshMessages());
 
-      Message.delete(messageId).then(() => refreshMessages());
+    if (target.matches(".message-flag")){
+    
+      }
     }
   });
-});
+}); 
+
